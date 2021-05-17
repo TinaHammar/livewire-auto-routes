@@ -1,8 +1,10 @@
 # livewire-auto-routes
 Auto generate routes for Laravel Livewire Components.
 
+[![Latest Stable Version](https://poser.pugx.org/tanthammar/livewire-auto-routes/v)](//packagist.org/packages/tanthammar/livewire-auto-routes)
+[![GitHub issues](https://img.shields.io/github/issues/TinaHammar/livewire-auto-routes)](https://github.com/TinaHammar/livewire-auto-routes/issues)
+[![GitHub stars](https://img.shields.io/github/stars/TinaHammar/livewire-auto-routes)](https://github.com/TinaHammar/livewire-auto-routes/stargazers)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/tanthammar/livewire-auto-routes.svg?style=flat-square)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/tanthammar/livewire-auto-routes.svg?style=flat-square)](https://packagist.org/packages/tanthammar/livewire-auto-routes)
 
 ## Installation
@@ -60,15 +62,23 @@ class FooComponent
 }
 ```
 
+### 💬 Let's connect
+Discuss with other tall-form users on the official Livewire Discord channel.
+You'll find me in the "partners/tall-forms" channel.
 
-## Changelog
+* [🔗 **Discord**](https://discord.gg/livewire)
+* [🔗 **Twitter**](https://twitter.com/TinaHammar)
+* [🔗 **Youtube**](https://www.youtube.com/channel/UCRPTsZ2OduwzGq3EdiynY2Q)
+* [🔗 **Devdojo**](https://devdojo.com/tinahammar)
+
+### Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing
+### Contributing
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security
+### Security
 If you discover any security-related issues, please open an issue.
 
-## License
+### License
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
