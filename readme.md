@@ -34,7 +34,7 @@ class FooComponent
 
 ### Auth route
 * Applies the `auth` middleware.
-* >**The property is used to generate both the route name and url.** 
+* **The property is used to generate both the route name and url.** 
 * Used for "plainly" named routes like 'users'
 
 ```php 
