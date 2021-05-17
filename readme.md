@@ -25,7 +25,7 @@ composer require tanthammar/livewire-auto-routes
 ```php 
 use Tanthammar\LivewireAutoRoutes\HasGuestRoute;
 
-class FooComponent 
+class FooComponent extends \Livewire\Component
 {
     use HasGuestRoute;
     protected string $guestRoute = 'foo';
@@ -40,7 +40,7 @@ class FooComponent
 ```php 
 use Tanthammar\LivewireAutoRoutes\HasAuthRoute;
 
-class FooComponent 
+class FooComponent extends \Livewire\Component
 {
     use HasAuthRoute;
     protected string $authRoute = 'foo';
@@ -54,7 +54,7 @@ class FooComponent
 ```php
 use Illuminate\Support\Facades\Route;
 
-class FooComponent 
+class FooComponent extends \Livewire\Component
 {
     public function route(): \Illuminate\Routing\Route|array
     {
