@@ -1,6 +1,6 @@
 {
     "name": "tanthammar/livewire-auto-routes",
-    "description": "A description for livewire-auto-routes.",
+    "description": "Auto generate routes for Laravel Livewire Components.",
     "type": "package",
     "license": "MIT",
     "keywords": [
