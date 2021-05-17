@@ -3,12 +3,12 @@
 
 namespace Tanthammar\LivewireAutoRoutes;
 
-use Illuminate\Support\Facades\Route;
-
 trait HasAuthRoute
 {
-    public function route()
+    public function route(): \Illuminate\Routing\Route|array
     {
-        return Route::get($this->authRoute, static::class)->middleware('auth')->name($this->authRoute);
+        return \Illuminate\Support\Facades\Route::get($this->authRoute, static::class)
+            ->middleware('auth')
+            ->name($this->authRoute);
     }
 }
