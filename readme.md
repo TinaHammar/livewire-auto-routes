@@ -13,12 +13,14 @@ composer require tanthammar/livewire-auto-routes
 ``` 
 
 ## Usage
-You generate routes via traits or by adding a `route()` method to your Livewire component.
+* You generate routes via traits or by adding a `route()` method to your Livewire component.
+* Your Livewire components can exist in any folder inside the app namespace.
 
 
 ### Guest route
-Applies the `guest` middleware.
-<br>**The property is used to generate both the route name and url.**
+* Applies the `guest` middleware.
+*  **The property is used to generate both the route name and url.**
+* Used for "plainly" named routes like 'users'
 
 ```php 
 use Tanthammar\LivewireAutoRoutes\HasGuestRoute;
@@ -31,8 +33,9 @@ class FooComponent
 ```
 
 ### Auth route
-Applies the `auth` middleware.
-<br>**The property is used to generate both the route name and url.**
+* Applies the `auth` middleware.
+* >**The property is used to generate both the route name and url.** 
+* Used for "plainly" named routes like 'users'
 
 ```php 
 use Tanthammar\LivewireAutoRoutes\HasAuthRoute;
@@ -45,15 +48,15 @@ class FooComponent
 ```
 
 ### Custom route
-* `use Illuminate\Support\Facades\Route`
-* `route()`
+* `use Illuminate\Support\Facades\Route` and add a `route()` method to your component. 
+* Use this method when you need  `/` slashes or `{optional?}` parameters.
 
 ```php
 use Illuminate\Support\Facades\Route;
 
 class FooComponent 
 {
-    public function route() //do not add any return type
+    public function route(): \Illuminate\Routing\Route|array
     {
         return Route::get('foo', static::class)
             ->middleware('auth') //default middleware is 'web'
