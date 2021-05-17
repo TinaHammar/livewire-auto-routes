@@ -28,6 +28,7 @@ use Tanthammar\LivewireAutoRoutes\HasGuestRoute;
 class FooComponent extends \Livewire\Component
 {
     use HasGuestRoute;
+    
     protected string $guestRoute = 'foo';
 }
 ```
@@ -43,6 +44,7 @@ use Tanthammar\LivewireAutoRoutes\HasAuthRoute;
 class FooComponent extends \Livewire\Component
 {
     use HasAuthRoute;
+    
     protected string $authRoute = 'foo';
 }
 ```
