@@ -58,7 +58,7 @@ class FooComponent extends \Livewire\Component
 {
     use HasAuthRoute;
     
-    protected string $authRoute = '/foo/{name?}'; //route name becomes 'foo.namet'
+    protected string $authRoute = '/foo/{name?}'; //route name becomes 'foo.name'
 }
 ```
 
