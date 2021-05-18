@@ -7,6 +7,11 @@ Auto generate routes for Laravel Livewire Components.
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/tanthammar/livewire-auto-routes.svg?style=flat-square)](https://packagist.org/packages/tanthammar/livewire-auto-routes)
 
+# Requirements
+* Livewire 2
+* Laravel 8
+* php 8
+
 # Installation
 ``` 
 composer require tanthammar/livewire-auto-routes
