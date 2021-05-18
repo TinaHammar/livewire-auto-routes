@@ -120,7 +120,7 @@ It's recommended to keep a controlled naming structure to avoid route conflicts.
 <td>App/Foo/Users/Delete.php</td><th>users/delete/{id}</th><td>users.delete.id</td>
 </tr>
 <tr>
-<td>App/Foo/Users/Delete.php</td><th>users/custom-stuff/{id}</th><td>users.custom-stuff.id</td>
+<td>App/Foo/Users/CustomStuff.php</td><th>users/custom-stuff/{id}</th><td>users.custom-stuff.id</td>
 </tr>
 </table>
 
