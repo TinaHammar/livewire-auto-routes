@@ -7,7 +7,11 @@ Route::middleware('web')->group(function () {
     $finder = new Finder();
 
     // find all files in app
-    $finder->files()->in(app_path())->name('*.php')->contains('public function route()');
+    $finder->files()
+        ->in(app_path())->name('*.php')
+        ->contains('public function route()')
+        ->contains('$authRoute')
+        ->contains('$guestRoute');
 
     if ($finder->hasResults()) {
         foreach ($finder as $file) {

@@ -16,7 +16,7 @@ class RouteMaker
         return $this->makeRoute();
     }
 
-    protected function makeRoute(): \Illuminate\Routing\Route|array
+    public function makeRoute(): \Illuminate\Routing\Route|array
     {
         if(empty($this->name)) {
             $routeName = $this->route;
