@@ -21,7 +21,9 @@ composer require tanthammar/livewire-auto-routes
 You can use web.php as normal. Routes declared in your Livewire components are registered after the routes in web.php. 
 
 # Routes are registered in alphabetical order!
-Livewire component **FILES** are looped in alphabetical order in the `app namespace`. One way to control the load order is to group your components in subfolders with suitable names like `routeGroupA`, `routeGroupB`, where routes in "routeGroup**A**" would be registered before "routeGroup**B**".
+Livewire component **FILES** are looped in alphabetical order in the `app namespace`. 
+One way to control the load order is to group your components in subfolders with suitable names 
+like `routeGroupA`, `routeGroupB`, where routes in _"routeGroup**A**"_ would be registered before _"routeGroup**B**"_.
 
 # Usage
 * You generate routes via traits or by adding a `route()` method to your Livewire component.
@@ -33,7 +35,6 @@ Livewire component **FILES** are looped in alphabetical order in the `app namesp
 ### Guest route Trait
 * Applies the `guest` middleware.
 *  **The property is used to generate both the route name and url.**
-* Used for "plainly" named routes like 'users'
 
 ```php 
 use Tanthammar\LivewireAutoRoutes\HasGuestRoute;
@@ -42,14 +43,13 @@ class FooComponent extends \Livewire\Component
 {
     use HasGuestRoute;
     
-    protected string $guestRoute = 'foo';
+    protected string $guestRoute = '/foo/{id}/edit'; //route name becomes 'foo.id.edit'
 }
 ```
 
 ### Auth route Trait
 * Applies the `auth` middleware.
-* **The property is used to generate both the route name and url.** 
-* Used for "plainly" named routes like 'users'
+* **The property is used to generate both the route name and url.**
 
 ```php 
 use Tanthammar\LivewireAutoRoutes\HasAuthRoute;
@@ -58,14 +58,14 @@ class FooComponent extends \Livewire\Component
 {
     use HasAuthRoute;
     
-    protected string $authRoute = 'foo';
+    protected string $authRoute = '/foo/{name?}'; //route name becomes 'foo.namet'
 }
 ```
 
-### Custom route
-* `use Illuminate\Support\Facades\Route` and add a `route()` method to your component. 
-* Use this method when you need  `/` slashes or `{optional?}` parameters.
+# Custom routes
 
+### Option 1
+Declare the route just like you would in `web.php`
 ```php
 use Illuminate\Support\Facades\Route;
 
@@ -79,6 +79,52 @@ class FooComponent extends \Livewire\Component
     }
 }
 ```
+
+### Option 2, use the RouteMaker
+The RouteMaker can auto-generate the route name from the route definition, but it's optional.
+```php
+use Tanthammar\LivewireAutoRoutes\RouteMaker;
+
+class FooComponent extends \Livewire\Component
+{
+    public function route(): RouteMaker
+    {
+        return new RouteMaker(
+            route: 'users/{id}/edit', //if you omit $name, this route name will become 'users.id.edit'
+            middleware: ['auth:sanctum', 'verified'],
+            component: static::class,
+            name: 'users.edit' //OPTIONAL, else $name will be generated from $route
+        );
+    }
+}
+```
+# Example using the Traits
+It's recommended to keep a controlled naming structure to avoid route conflicts. Use the `RouteMaker` if you want better naming.
+<table>
+<tr>
+<th>Directory</th><th>$authRoute or $guestRoute</th><th>Generated route name</th>
+</tr>
+<tr>
+<td>App/Foo/Users/Index.php</td><th>users</th><td>users</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Show.php</td><th>users/{id}</th><td>users.id</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Create.php</td><th>users/create</th><td>users.create</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Edit.php</td><th>users/edit/{id}</th><td>users.edit.id</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Delete.php</td><th>users/delete/{id}</th><td>users.delete.id</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Delete.php</td><th>users/custom-stuff/{id}</th><td>users.custom-stuff.id</td>
+</tr>
+</table>
+
+
 
 ### 💬 Let's connect
 Discuss with other tall-form users on the official Livewire Discord channel.
