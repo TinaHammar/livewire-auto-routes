@@ -7,14 +7,22 @@ Auto generate routes for Laravel Livewire Components.
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/tanthammar/livewire-auto-routes.svg?style=flat-square)](https://packagist.org/packages/tanthammar/livewire-auto-routes)
 
-## Installation
+# Installation
 ``` 
 composer require tanthammar/livewire-auto-routes
 ``` 
 
-## Usage
+# Routes in `web.php` takes precedence!
+You can use web.php as normal. Routes declared in your Livewire components are registered after the routes in web.php. 
+
+# Routes are registered in alphabetical order!
+Livewire component **FILES** are looped in alphabetical order in the `app namespace`. One way to control the load order is to group your components in subfolders with suitable names like `routeGroupA`, `routeGroupB`, where routes in "routeGroup**A**" would be registered before "routeGroup**B**".
+
+# Usage
 * You generate routes via traits or by adding a `route()` method to your Livewire component.
-* Your Livewire components can exist in any folder inside the app namespace.
+* Your Livewire components can exist in any folder inside the `app` namespace.
+* If you don't add any of the traits or the `route()` method, the Livewire component is treated just as a normal component, thus ignored by this package.
+
 
 
 ### Guest route
