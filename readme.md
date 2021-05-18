@@ -18,12 +18,7 @@ composer require tanthammar/livewire-auto-routes
 ``` 
 
 # Routes in `web.php` takes precedence!
-You can use web.php as normal. Routes declared in your Livewire components are registered after the routes in web.php. 
-
-# Routes are registered in alphabetical order!
-Livewire component **FILES** are looped in alphabetical order in the `app namespace`. 
-One way to control the load order is to group your components in subfolders with suitable names 
-like `routeGroupA`, `routeGroupB`, where routes in _"routeGroup**A**"_ would be registered before _"routeGroup**B**"_.
+You can use web.php as normal. Routes declared in your Livewire components are registered after the routes in web.php.
 
 # Usage
 * You generate routes via traits or by adding a `route()` method to your Livewire component.
@@ -98,6 +93,12 @@ class FooComponent extends \Livewire\Component
     }
 }
 ```
+
+# Routes are registered in alphabetical order!
+Livewire component **FILES** are looped in alphabetical order in the `app namespace`.
+One way to control the load order is to group your components in subfolders with suitable names
+like `routeGroupA`, `routeGroupB`, where routes in _"routeGroup**A**"_ would be registered before _"routeGroup**B**"_.
+
 # Example using the Traits
 It's recommended to keep a controlled naming structure to avoid route conflicts. Use the `RouteMaker` if you want better naming.
 <table>
