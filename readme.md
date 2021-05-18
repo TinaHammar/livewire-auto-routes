@@ -2,10 +2,11 @@
 Auto generate routes for Laravel Livewire Components.
 
 [![Latest Stable Version](https://poser.pugx.org/tanthammar/livewire-auto-routes/v)](//packagist.org/packages/tanthammar/livewire-auto-routes)
+[![Latest Unstable Version](https://poser.pugx.org/tanthammar/livewire-auto-routes/v/unstable)](//packagist.org/packages/tanthammar/livewire-auto-routes)
+[![Total Downloads](https://poser.pugx.org/tanthammar/livewire-auto-routes/downloads)](//packagist.org/packages/tanthammar/livewire-auto-routes)
 [![GitHub issues](https://img.shields.io/github/issues/TinaHammar/livewire-auto-routes)](https://github.com/TinaHammar/livewire-auto-routes/issues)
 [![GitHub stars](https://img.shields.io/github/stars/TinaHammar/livewire-auto-routes)](https://github.com/TinaHammar/livewire-auto-routes/stargazers)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/tanthammar/livewire-auto-routes.svg?style=flat-square)](https://packagist.org/packages/tanthammar/livewire-auto-routes)
 
 # Requirements
 * Livewire 2
