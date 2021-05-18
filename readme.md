@@ -104,25 +104,25 @@ like `routeGroupA`, `routeGroupB`, where routes in _"routeGroup**A**"_ would be 
 It's recommended to keep a controlled naming structure to avoid route conflicts. Use the `RouteMaker` if you want better naming.
 <table>
 <tr>
-<th>Directory</th><th>$authRoute or $guestRoute</th><th>Generated route name</th>
+<th>Directory(asc) = load order</th><th>$authRoute or $guestRoute</th><th>Generated route name</th>
+</tr>
+<tr>
+<td>App/Foo/Users/Create.php</td><th>users/create</th><td>users.create</td>
+</tr>
+<tr>
+<td>App/Foo/Users/CustomStuff.php</td><th>users/custom-stuff/{id}</th><td>users.custom-stuff.id</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Delete.php</td><th>users/delete/{id}</th><td>users.delete.id</td>
+</tr>
+<tr>
+<td>App/Foo/Users/Edit.php</td><th>users/edit/{id}</th><td>users.edit.id</td>
 </tr>
 <tr>
 <td>App/Foo/Users/Index.php</td><th>users</th><td>users</td>
 </tr>
 <tr>
 <td>App/Foo/Users/Show.php</td><th>users/{id}</th><td>users.id</td>
-</tr>
-<tr>
-<td>App/Foo/Users/Create.php</td><th>users/create</th><td>users.create</td>
-</tr>
-<tr>
-<td>App/Foo/Users/Edit.php</td><th>users/edit/{id}</th><td>users.edit.id</td>
-</tr>
-<tr>
-<td>App/Foo/Users/Delete.php</td><th>users/delete/{id}</th><td>users.delete.id</td>
-</tr>
-<tr>
-<td>App/Foo/Users/CustomStuff.php</td><th>users/custom-stuff/{id}</th><td>users.custom-stuff.id</td>
 </tr>
 </table>
 
