@@ -5,10 +5,8 @@ namespace Tanthammar\LivewireAutoRoutes;
 
 trait HasGuestRoute
 {
-    public function route(): \Illuminate\Routing\Route|array
+    public function route(): RouteMaker
     {
-        return \Illuminate\Support\Facades\Route::get($this->guestRoute, static::class)
-            ->middleware('guest')
-            ->name($this->guestRoute);
+        return new RouteMaker(route: $this->guestRoute, middleware: 'guest', component: static::class);
     }
 }
