@@ -25,7 +25,7 @@ Livewire component **FILES** are looped in alphabetical order in the `app namesp
 
 
 
-### Guest route
+### Guest route Trait
 * Applies the `guest` middleware.
 *  **The property is used to generate both the route name and url.**
 * Used for "plainly" named routes like 'users'
@@ -41,7 +41,7 @@ class FooComponent extends \Livewire\Component
 }
 ```
 
-### Auth route
+### Auth route Trait
 * Applies the `auth` middleware.
 * **The property is used to generate both the route name and url.** 
 * Used for "plainly" named routes like 'users'
