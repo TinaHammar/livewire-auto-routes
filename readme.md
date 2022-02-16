@@ -13,6 +13,10 @@ Auto generate routes for Laravel Livewire Components.
 * Laravel 8
 * php 8
 
+# Use Spatie pkg
+I recommend that you try  
+[Spatie Laravel Route Attributes](https://github.com/spatie/laravel-route-attributes) before installing this package.
+
 # Installation
 ``` 
 composer require tanthammar/livewire-auto-routes
